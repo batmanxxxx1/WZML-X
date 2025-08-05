@@ -30,20 +30,20 @@ basicConfig(
 load_dotenv("config.env", override=True)
 
 try:
-    if bool(environ.get("_____REMOVE_THIS_LINE_____")):
+    if bool(environ.get("")):
         log_error("The README.md file there to be read! Exiting now!")
         exit()
 except Exception:
     pass
 
-BOT_TOKEN = environ.get("BOT_TOKEN", "")
+BOT_TOKEN = environ.get("BOT_TOKEN", "8114810188:AAEy-VSBOkV3n429i8InXC64ln-uLTjrMcw")
 if len(BOT_TOKEN) == 0:
     log_error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
 
 bot_id = BOT_TOKEN.split(":", 1)[0]
 
-DATABASE_URL = environ.get("DATABASE_URL", "")
+DATABASE_URL = environ.get("DATABASE_URL", "mongodb+srv://sukunaaaabot:<sukunaaaabot1>@cluster0.nybzyb3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 if len(DATABASE_URL) == 0:
     DATABASE_URL = None
 
@@ -69,11 +69,11 @@ if UPGRADE_PACKAGES.lower() == "true":
     packages = [dist.metadata["Name"] for dist in distributions()]
     scall("uv pip install --system " + " ".join(packages), shell=True)
 
-UPSTREAM_REPO = environ.get("UPSTREAM_REPO", "")
+UPSTREAM_REPO = environ.get("UPSTREAM_REPO", "https://github.com/SilentDemonSD/WZML-X")
 if len(UPSTREAM_REPO) == 0:
     UPSTREAM_REPO = None
 
-UPSTREAM_BRANCH = environ.get("UPSTREAM_BRANCH", "")
+UPSTREAM_BRANCH = environ.get("UPSTREAM_BRANCH", "wzv3")
 if len(UPSTREAM_BRANCH) == 0:
     UPSTREAM_BRANCH = "master"
 
